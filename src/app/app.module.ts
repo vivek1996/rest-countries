@@ -6,18 +6,27 @@ import { AppComponent } from './app.component';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
-
+// loader Import
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { AllRegionComponent } from './all-region/all-region.component';
+import { AllCountriesComponent } from './all-countries/all-countries.component';
+import { SingleCountryComponent } from './single-country/single-country.component';
+import { CountriesService } from './countries.service';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AllRegionComponent,
+    AllCountriesComponent,
+    SingleCountryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxSpinnerModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
-  schemas: [ NO_ERRORS_SCHEMA ],
+  providers: [CountriesService],
+  schemas: [NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
