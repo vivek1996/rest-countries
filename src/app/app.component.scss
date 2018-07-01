@@ -1,0 +1,8 @@
+a .fa {
+    font-size: 1.5rem;
+    transition: all .2s ease-in-out;
+}
+a .fa:hover {
+    color: rgb(121, 75, 196);
+    transform: scale(1.5);
+}

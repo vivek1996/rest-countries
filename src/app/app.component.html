@@ -1,21 +1,51 @@
-<!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark ">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark">
   <logo>
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="/">Countries INFO</a>
   </logo>
-  <!-- Collapsible content -->
   <links>
-    <!-- Links -->
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item ">
-        <a class="nav-link waves-light" mdbWavesEffect>Home</a>
+      <li class="nav-item " routerLinkActive=" active">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/home">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect>About</a>
+      <li class="nav-item" routerLinkActive=" active">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/about">About</a>
       </li>
     </ul>
-    <!-- Links -->
   </links>
-  <!-- Collapsible content -->
 </mdb-navbar>
-<!--/.Navbar-->
+
+<!-- Routet outlet -->
+<router-outlet></router-outlet>
+<!--Footer-->
+<footer class="page-footer text-center font-small mt-4 ">
+
+  <hr class="my-4">
+
+  <!-- Social icons -->
+  <div class="pb-4">
+    <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+      <i class="fa fa-facebook mr-3"></i>
+    </a>
+
+    <a href="https://twitter.com/MDBootstrap" target="_blank">
+      <i class="fa fa-twitter mr-3"></i>
+    </a>
+
+    <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
+      <i class="fa fa-google-plus mr-3"></i>
+    </a>
+
+    <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+      <i class="fa fa-github mr-3"></i>
+    </a>
+  </div>
+  <!-- Social icons -->
+
+
+  <div class="footer-copyright py-3">With
+    <i class="fa fa-heart p-1 red-text"></i> From
+    <a href="https://restcountries.eu" target="_blank">REST COUNTRIES</a>
+  </div>
+
+
+</footer>
