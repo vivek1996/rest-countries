@@ -1,4 +1,5 @@
 
+
 .back {
     background-image: url('../../assets/noun_world_26947.svg');
     width: 100%;
@@ -14,10 +15,14 @@
     height: 100px;
     width: 100px;
 }
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: rgb(220, 20, 60);
+}
 svg .icon {
-    fill: #0ba1ec;
+    fill:rgb(220, 20, 60);
     &:hover{
-        fill: crimson;
+        fill: rgb(10, 162, 173) ;
     }
 }
 .view img {
@@ -36,3 +41,41 @@ svg .icon {
     -webkit-border-radius: 10em;
     border-radius: 10em
 }
+// Shine effect on button
+
+// .btn:after {
+//     content: "";
+//     position: absolute;
+//     top: -110%;
+//     left: -210%;
+//     width: 200%;
+//     height: 200%;
+//     opacity: 0;
+//     transform: rotate(30deg);
+
+//     background: rgba(255, 255, 255, 0.13);
+//     background: linear-gradient(
+//       to right,
+//       rgba(255, 255, 255, 0.13) 0%,
+//       rgba(255, 255, 255, 0.13) 77%,
+//       rgba(255, 255, 255, 0.5) 92%,
+//       rgba(255, 255, 255, 0.0) 100%
+//     );
+//   }
+
+//   /* Hover state - trigger effect */
+
+//   .btn:hover:after {
+//     opacity: 1;
+//     top: -30%;
+//     left: -30%;
+//     transition-property: left, top, opacity;
+//     transition-duration: 0.7s, 0.7s, 0.15s;
+//     transition-timing-function: ease;
+//   }
+
+//   /* Active state */
+
+//   .btn:active:after {
+//     opacity: 0;
+//   }
