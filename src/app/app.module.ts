@@ -13,6 +13,8 @@ import { AllCountriesComponent } from './all-countries/all-countries.component';
 import { SingleCountryComponent } from './single-country/single-country.component';
 import { CountriesService } from './countries.service';
 import { AboutComponent } from './about/about.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,8 @@ import { AboutComponent } from './about/about.component';
     BrowserModule,
     AppRoutingModule,
     NgxSpinnerModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [CountriesService],
   schemas: [NO_ERRORS_SCHEMA],
