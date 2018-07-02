@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { CountriesService } from '../countries.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./all-countries.component.scss'],
   providers: [Location]
 })
-export class AllCountriesComponent implements OnInit {
+export class AllCountriesComponent implements OnInit, AfterContentChecked {
   public currrentregion;
   public allCountries;
 
@@ -23,17 +23,29 @@ export class AllCountriesComponent implements OnInit {
     private toastr: ToastrService
   ) {
     this.currrentregion = this.route.snapshot.paramMap.get('region');
-    this.spinner.show();
+
     // console.log(this.currrentregion);
   }
 
+  ngAfterContentChecked() {
+    // this.spinner.hide();
+  }
+
   ngOnInit() {
+    this.spinner.show();
+    setTimeout(() => {
+      console.log('spinner 1');
+      this.spinner.hide();
+    }, 5000);
     // get allcoutries
     this.http.getAllCountries(this.currrentregion).subscribe(
       data => {
         this.allCountries = data;
+        setTimeout(() => {
+          console.log('spinner all country');
+          this.spinner.hide();
+        }, 5000);
         // console.log(this.allCountries);
-        this.spinner.hide();
       },
       error => {
         console.log(error);
@@ -53,25 +65,33 @@ export class AllCountriesComponent implements OnInit {
     // });
     // get query params
     this.route.queryParams.subscribe(queryParams => {
-      this.spinner.show();
       // console.log(queryParams);
       if (queryParams.currency) {
+        this.spinner.show();
         this.http
           .getCountriesByCurrency(queryParams.currency)
           .subscribe(data => {
             // console.log(data);
             this.allCountries = data;
-            this.spinner.hide();
+            setTimeout(() => {
+              console.log('spinner params curr');
+              this.spinner.hide();
+            }, 2000);
             this.toastr.success('Loaded Countries By Same Currency 😉');
           });
       } else if (queryParams.language) {
+        this.spinner.show();
         this.http
           .getCountriesByLanguage(queryParams.language)
           .subscribe(data => {
             // console.log(data);
             this.allCountries = data;
-            this.spinner.hide();
-            this.toastr.success('Loaded Countries By Same Currency 😃');
+            setTimeout(() => {
+              console.log('spinner param lan');
+              this.spinner.hide();
+            }, 2000);
+            // this.spinner.hide();
+            this.toastr.success('Loaded Countries By Same Language 😃');
           });
       } else {
         console.log('error in params or No Parameter', { queryParams });
