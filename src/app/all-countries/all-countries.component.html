@@ -1,3 +1,31 @@
-<p>
-  all-countries works!
-</p>
+<div class="mt-3">
+  <div class="container">
+    <div class="row" *ngIf="allCountries">
+      <div class="col" *ngFor="let country of allCountries">
+        <div class="card">
+          <img class="img-fluid" [src]="country.flag">
+          <div class="card-body">
+            <h4 class="card-title">{{country.name}}</h4>
+            <h5>Capital :{{country.capital}}</h5>
+            <div class="card-text">
+              <p>Native Name : {{country.nativeName}} </p>
+              <p>Timezones: {{country.timezones}} </p>
+              <ul class="list-group" *ngFor="let currency of country.currencies">
+                <li class="list-item">
+                  <a [routerLink]="['/all-countries',country.alpha3Code] " [queryParams]="{currency: currency.code}">currency code: {{currency.code}} </a>
+
+                </li>
+                <li> {{currency.name}} </li>
+                <li> {{currency.symbol}} </li>
+              </ul>
+
+            </div>
+            <a class="btn btn-primary waves-light" [routerLink]="['/country',country.alpha3Code]" mdbWavesEffect>View More</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

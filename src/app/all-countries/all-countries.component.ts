@@ -39,7 +39,10 @@ export class AllCountriesComponent implements OnInit {
     // get query params
     this.route.queryParams.subscribe(queryParams => {
       console.log(queryParams);
-      // do something with the query params
+      this.http.getCountriesByCurrency(queryParams.currency).subscribe(data => {
+        console.log(data);
+        this.allCountries = data;
+      });
     });
   }
 }

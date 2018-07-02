@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'all-countries/:region', component: AllCountriesComponent },
   { path: 'all-countries/:code', component: AllCountriesComponent },
-  { path: 'single-country/:name', component: SingleCountryComponent },
+  { path: 'country/:name', component: SingleCountryComponent },
   { path: '**', component: AllRegionComponent }
 ];
 
