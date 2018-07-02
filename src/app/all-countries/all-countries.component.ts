@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CountriesService } from '../countries.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-all-countries',
   templateUrl: './all-countries.component.html',
@@ -16,9 +18,12 @@ export class AllCountriesComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private http: CountriesService,
-    private location: Location
+    private location: Location,
+    private spinner: NgxSpinnerService,
+    private toastr: ToastrService
   ) {
     this.currrentregion = this.route.snapshot.paramMap.get('region');
+    this.spinner.show();
     // console.log(this.currrentregion);
   }
 
@@ -28,6 +33,7 @@ export class AllCountriesComponent implements OnInit {
       data => {
         this.allCountries = data;
         // console.log(this.allCountries);
+        this.spinner.hide();
       },
       error => {
         console.log(error);
@@ -47,6 +53,7 @@ export class AllCountriesComponent implements OnInit {
     // });
     // get query params
     this.route.queryParams.subscribe(queryParams => {
+      this.spinner.show();
       // console.log(queryParams);
       if (queryParams.currency) {
         this.http
@@ -54,6 +61,8 @@ export class AllCountriesComponent implements OnInit {
           .subscribe(data => {
             // console.log(data);
             this.allCountries = data;
+            this.spinner.hide();
+            this.toastr.success('Loaded Countries By Same Currency 😉');
           });
       } else if (queryParams.language) {
         this.http
@@ -61,6 +70,8 @@ export class AllCountriesComponent implements OnInit {
           .subscribe(data => {
             // console.log(data);
             this.allCountries = data;
+            this.spinner.hide();
+            this.toastr.success('Loaded Countries By Same Currency 😃');
           });
       } else {
         console.log('error in params or No Parameter', { queryParams });
