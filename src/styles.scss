@@ -13,6 +13,10 @@
 //     }
 //   }
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
+.btn {
+    -webkit-border-radius: 10em;
+    border-radius: 10em
+}
 .black-skin .gradient {
     background: #000;
     background: -webkit-linear-gradient(315deg,#000 0,#616161 100%);
