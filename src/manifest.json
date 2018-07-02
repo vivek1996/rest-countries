@@ -1,8 +1,8 @@
 {
   "name": "rest-countries",
   "short_name": "rest-countries",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "theme_color": "#148bcc",
+  "background_color": "#35c696",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
