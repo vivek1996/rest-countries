@@ -18,7 +18,11 @@
                 <li> {{currency.name}} </li>
                 <li> {{currency.symbol}} </li>
               </ul>
-
+              <hr>
+              <p>Languages :
+                <span *ngFor="let language of country.languages; let i = last">
+                  <a [routerLink]="['/all-countries/', country.alpha3Code]" [queryParams]="{ 'language' : language.iso639_1}">{{language.name}} </a>{{i ? "" : ","}} </span>
+              </p>
             </div>
             <a class="btn btn-primary waves-light" [routerLink]="['/country',country.alpha3Code]" mdbWavesEffect>View More</a>
           </div>

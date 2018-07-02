@@ -46,7 +46,7 @@ export class CountriesService {
     return this._http.get(
       `${
         this.url
-      }/currency/${lang}?fields=name;capital;currencies;subregion;timezones;alpha3Code;population;area;latlng;flag;topLevelDomain;alpha2Code;altSpellings;region;borders;nativeName;languages;callingCodes`
+      }/lang/${lang}?fields=name;capital;currencies;subregion;timezones;alpha3Code;population;area;latlng;flag;topLevelDomain;alpha2Code;altSpellings;region;borders;nativeName;languages;callingCodes`
     );
   }
 }
