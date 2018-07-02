@@ -10,6 +10,7 @@ import { Location } from '@angular/common';
 })
 export class AllCountriesComponent implements OnInit {
   public currrentregion;
+  public allCountries;
 
   constructor(
     private route: ActivatedRoute,
@@ -17,9 +18,28 @@ export class AllCountriesComponent implements OnInit {
     private http: CountriesService,
     private location: Location
   ) {
-    this.currrentregion = this.route.snapshot.paramMap.get('region');
-    console.log(this.currrentregion);
+    // this.currrentregion = this.route.snapshot.paramMap.get('region');
+    // console.log(this.currrentregion);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // get allcoutries
+    this.route.params.subscribe(routeParams => {
+      console.log(routeParams);
+      this.http.getAllCountries(routeParams.region).subscribe(
+        data => {
+          this.allCountries = data;
+          console.log(this.allCountries);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    });
+    // get query params
+    this.route.queryParams.subscribe(queryParams => {
+      console.log(queryParams);
+      // do something with the query params
+    });
+  }
 }

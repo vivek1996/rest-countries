@@ -30,7 +30,6 @@ export class CountriesService {
     return this._http.get(
       `${
         this.url
-        // tslint:disable-next-line:max-line-length
       }/alpha/${country}?fields=name;capital;currencies;subregion;timezones;alpha3Code;population;area;latlng;flag;topLevelDomain;alpha2Code;altSpellings;region;borders;nativeName;languages;callingCodes`
     );
   }
@@ -39,7 +38,6 @@ export class CountriesService {
     return this._http.get(
       `${
         this.url
-        // tslint:disable-next-line:max-line-length
       }/currency/${currency}?fields=name;capital;currencies;subregion;timezones;alpha3Code;population;area;latlng;flag;topLevelDomain;alpha2Code;altSpellings;region;borders;nativeName;languages;callingCodes`
     );
   }
@@ -48,7 +46,6 @@ export class CountriesService {
     return this._http.get(
       `${
         this.url
-        // tslint:disable-next-line:max-line-length
       }/currency/${lang}?fields=name;capital;currencies;subregion;timezones;alpha3Code;population;area;latlng;flag;topLevelDomain;alpha2Code;altSpellings;region;borders;nativeName;languages;callingCodes`
     );
   }
