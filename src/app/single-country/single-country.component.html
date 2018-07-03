@@ -3,7 +3,7 @@
 <div class="mt-5">
   <div class="container">
     <div class="row">
-      <div class="col-md-10 m-auto">
+      <div class="col-md-11 m-auto">
         <div class="card card-cascade wider reverse my-4" *ngIf="country">
           <div class="view view-cascade overlay waves-light" mdbWavesEffect>
             <img [src]="country.flag" class="img-fluid w-100" style="max-height: 20rem">
@@ -21,9 +21,53 @@
             <div class="card-text">
               <p>Native Name : {{country.nativeName}} </p>
             </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="black-text">
+                    <p>Region : {{country.region}} </p>
+                    <p>Sub Region : {{country.subregion}} </p>
+                    <p>Languages :
+                      <span *ngFor="let language of country.languages; let i = last">
+                        <a [routerLink]="['../../region/', country.alpha3Code]" [queryParams]="{ 'language' : language.iso639_1}">{{language.name}} </a>{{i ? "" : ","}} </span>
+                    </p>
+
+                    <p>Top level Domain : {{country.topLevelDomain}} </p>
+                    <p>Calling Codes : {{country.callingCodes}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="black-text">
+                    <p>Alternate Spellings : {{country.altSpellings}} </p>
+                    <p>Area : {{country.area}} Square Kilometers </p>
+                    <p>Population : {{country.population}} </p>
+                    <ul class="list-group" *ngFor="let currency of country.currencies">
+                      <li class="list-unstyled  text-left ml-3 blue-text">Currencies :</li>
+                      <li *ngIf="currency.name" class="list-group-item d-flex justify-content-between align-items-center">
+                        <a [routerLink]="['../../region',country.alpha3Code] " [queryParams]="{currency: currency.code}" class="font-small"> {{currency.name}} ( {{currency.code}} )</a>
+                        <span class="badge badge-dark badge-pill" *ngIf="currency.symbol">{{currency.symbol}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="country.borders[0]">
+              <div class="mt-2">
+                Border Countries :
+                <div class="chip" *ngFor="let count of country.borders">
+                  {{count}}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="text-center">
+      <button type="button" class="btn btn-danger waves-light" (click)="goBackToPreviousPage()" mdbWavesEffect>Go Back</button>
     </div>
   </div>
 </div>
