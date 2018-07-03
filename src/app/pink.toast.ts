@@ -13,7 +13,7 @@ import { Toast, ToastrService, ToastPackage } from 'ngx-toastr';
   styles: [
     `
       :host {
-        background-color: #ff69b4;
+        background-color: #e8255f;
         position: relative;
         overflow: hidden;
         margin: 0 0 6px;
