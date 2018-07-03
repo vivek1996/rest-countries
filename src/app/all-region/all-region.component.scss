@@ -1,44 +1,45 @@
-
-
 .back {
-    background-image: url('../../assets/noun_world_26947.svg');
-    width: 100%;
-    height: 95vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url('../../assets/noun_world_26947.svg');
+  width: 100%;
+  height: 95vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .gray-background {
-    background: #263238;
+  background: #263238;
 }
 .center-logo {
-    height: 100px;
-    width: 100px;
+  height: 100px;
+  width: 100px;
 }
 h1 {
-    font-family: 'Pacifico', cursive;
-    color: rgb(220, 20, 60);
+  font-family: 'Pacifico', cursive;
+  color: rgb(220, 20, 60);
 }
 svg .icon {
-    fill:rgb(220, 20, 60);
-    &:hover{
-        fill: rgb(10, 162, 173) ;
-    }
+  fill: rgb(220, 20, 60);
+  &:hover {
+    fill: rgb(10, 162, 173);
+  }
 }
 .view img {
-    height: 150px;
-    width: 150px;
+  height: 150px;
+  width: 150px;
 }
 
 .col .card {
-        transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
-    &:hover {
-        transform: scale(1.05);
-        border-color: rgb(231, 35, 68);
-    }
+  &:hover {
+    transform: scale(1.05);
+    border-color: rgb(231, 35, 68);
+  }
 }
-
+.btn {
+  -webkit-border-radius: 10em;
+  border-radius: 10em;
+}
 // Shine effect on button
 
 // .btn:after {

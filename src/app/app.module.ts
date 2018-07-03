@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ConvertPipe } from './convert.pipe';
 import { PinkToast } from './pink.toast';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { PinkToast } from './pink.toast';
     AppRoutingModule,
     NgxSpinnerModule,
     CommonModule,
+    FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       toastComponent: PinkToast

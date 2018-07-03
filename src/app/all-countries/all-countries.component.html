@@ -1,7 +1,17 @@
 <div class="mt-4">
   <div class="container">
     <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="large" color="#1bedf4" type="square-jelly-box"></ngx-spinner>
+    <div class="row">
+      <div class="col-md-4 mt-3 m-auto">
+        <div class="form-inline md-form ml-auto mb-4 mt-3">
+          <input class="form-control mr-sm-2 white-text" type="text" placeholder="Enter more than 3 characters" aria-label="Search">
+          <button class="btn btn-primary btn-rounded btn-sm my-0 waves-light" mdbWavesEffect type="submit">Search</button>
+        </div>
+      </div>
+    </div>
+
     <div class="row" *ngIf="allCountries">
+
       <!-- <div class="col" *ngFor="let country of allCountries">
         <div class="card">
           <img class="img-fluid" [src]="country.flag">
