@@ -1,4 +1,29 @@
-<p>
-  single-country works!
-</p>
-<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="large" color="#1aaec9" type="square-jelly-box"></ngx-spinner>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="large" color="#1aaec9" type="square-jelly-box">
+</ngx-spinner>
+<div class="mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 m-auto">
+        <div class="card card-cascade wider reverse my-4" *ngIf="country">
+          <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+            <img [src]="country.flag" class="img-fluid w-100" style="max-height: 20rem">
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+          <div class="card-body card-body-cascade text-center">
+            <h4 class="card-title">
+              <strong> {{country.name | titlecase }} </strong>
+            </h4>
+            <h5 class="indigo-text">
+              <strong>Capital : {{country.capital | titlecase }}</strong>
+            </h5>
+            <div class="card-text">
+              <p>Native Name : {{country.nativeName}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
