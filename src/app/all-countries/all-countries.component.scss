@@ -76,6 +76,12 @@
 }
 
 // .card:hover {
-//     transform: scale(1.02);
-//     z-index: 2;
+//    // transform: scale(1.02);
+//    // z-index: 2;
+//    border: 1px solid;
+//    border-color: blueviolet;
 // }
+.btn {
+    -webkit-border-radius: 10em;
+    border-radius: 10em
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentChecked } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { CountriesService } from '../countries.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./all-countries.component.scss'],
   providers: [Location]
 })
-export class AllCountriesComponent implements OnInit, AfterContentChecked {
+export class AllCountriesComponent implements OnInit {
   public currrentregion;
   public allCountries;
 
@@ -27,24 +27,21 @@ export class AllCountriesComponent implements OnInit, AfterContentChecked {
     // console.log(this.currrentregion);
   }
 
-  ngAfterContentChecked() {
-    // this.spinner.hide();
-  }
 
   ngOnInit() {
     this.spinner.show();
     setTimeout(() => {
-      console.log('spinner 1');
+     // console.log('spinner 1');
       this.spinner.hide();
-    }, 5000);
+    }, 2000);
     // get allcoutries
     this.http.getAllCountries(this.currrentregion).subscribe(
       data => {
         this.allCountries = data;
         setTimeout(() => {
-          console.log('spinner all country');
+         // console.log('spinner all country');
           this.spinner.hide();
-        }, 5000);
+        }, 2000);
         // console.log(this.allCountries);
       },
       error => {
@@ -74,7 +71,7 @@ export class AllCountriesComponent implements OnInit, AfterContentChecked {
             // console.log(data);
             this.allCountries = data;
             setTimeout(() => {
-              console.log('spinner params curr');
+            //  console.log('spinner params curr');
               this.spinner.hide();
             }, 2000);
             this.toastr.success('Loaded Countries By Same Currency 😉');
@@ -87,7 +84,7 @@ export class AllCountriesComponent implements OnInit, AfterContentChecked {
             // console.log(data);
             this.allCountries = data;
             setTimeout(() => {
-              console.log('spinner param lan');
+             // console.log('spinner param lan');
               this.spinner.hide();
             }, 2000);
             // this.spinner.hide();
@@ -97,5 +94,8 @@ export class AllCountriesComponent implements OnInit, AfterContentChecked {
         console.log('error in params or No Parameter', { queryParams });
       }
     });
+  }
+  public goBackToPreviousPage() {
+    this.location.back();
   }
 }

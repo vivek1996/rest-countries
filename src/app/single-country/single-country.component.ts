@@ -9,5 +9,11 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class SingleCountryComponent implements OnInit {
   constructor(private spinner: NgxSpinnerService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.spinner.show();
+    setTimeout(() => {
+      console.log('spinner 1');
+      this.spinner.hide();
+    }, 5000);
+  }
 }
