@@ -33,7 +33,7 @@
                     </p>
 
                     <p>Top level Domain : {{country.topLevelDomain}} </p>
-                    <p>Calling Codes : {{country.callingCodes}}</p>
+                    <p>Calling Codes : +{{country.callingCodes}}</p>
                   </div>
                 </div>
               </div>
@@ -42,7 +42,7 @@
                   <div class="black-text">
                     <p>Alternate Spellings : {{country.altSpellings}} </p>
                     <p>Area : {{country.area}} Square Kilometers </p>
-                    <p>Population : {{country.population}} </p>
+                    <p mdbTooltip="{{country.population}}" placement="top">Population : {{country.population | convert }} </p>
                     <ul class="list-group" *ngFor="let currency of country.currencies">
                       <li class="list-unstyled  text-left ml-3 blue-text">Currencies :</li>
                       <li *ngIf="currency.name" class="list-group-item d-flex justify-content-between align-items-center">
@@ -56,7 +56,7 @@
             </div>
             <div *ngIf="country.borders[0]">
               <div class="mt-2">
-                Border Countries :
+                <hr> Border Countries :
                 <div class="chip" *ngFor="let count of country.borders">
                   {{count}}
                 </div>
