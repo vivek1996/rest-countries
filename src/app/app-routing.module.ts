@@ -9,8 +9,8 @@ const routes: Routes = [
   { path: 'home', component: AllRegionComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
-  { path: 'all-countries/:region', component: AllCountriesComponent },
-  { path: 'all-countries/:code', component: AllCountriesComponent },
+  { path: 'region/:region', component: AllCountriesComponent },
+  // { path: 'all-countries/:code', component: AllCountriesComponent },
   { path: 'country/:name', component: SingleCountryComponent },
   { path: '**', component: AllRegionComponent }
 ];

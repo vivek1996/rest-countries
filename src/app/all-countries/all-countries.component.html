@@ -45,19 +45,19 @@
               </h4>
               <h6 class="indigo-text">Capital :{{country.capital}}</h6>
               <div class="card-text">
-                <p>Native Name : {{country.nativeName}} </p>
+                <!-- <p>Native Name : {{country.nativeName}} </p> -->
                 <p>Timezone : {{country.timezones}} </p>
               </div>
               <p>Currencies :</p>
               <ul class="list-group" *ngFor="let currency of country.currencies">
                 <li *ngIf="currency.name" class="list-group-item d-flex justify-content-between align-items-center">
-                  <a [routerLink]="['/all-countries',country.alpha3Code] " [queryParams]="{currency: currency.code}" class="font-small"> {{currency.name}} ( {{currency.code}} )</a>
+                  <a [routerLink]="['/region',country.alpha3Code] " [queryParams]="{currency: currency.code}" class="font-small"> {{currency.name}} ( {{currency.code}} )</a>
                   <span class="badge badge-info badge-pill" *ngIf="currency.symbol">{{currency.symbol}}</span>
                 </li>
               </ul>
               <p>Languages :
                 <span *ngFor="let language of country.languages; let i = last">
-                  <a [routerLink]="['/all-countries/', country.alpha3Code]" [queryParams]="{ 'language' : language.iso639_1}">{{language.name}} </a>{{i ? "" : ","}} </span>
+                  <a [routerLink]="['/region/', country.alpha3Code]" [queryParams]="{ 'language' : language.iso639_1}">{{language.name}} </a>{{i ? "" : ","}} </span>
               </p>
 
             </div>
