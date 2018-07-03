@@ -21,6 +21,11 @@
     -webkit-border-radius: 10em;
     border-radius: 10em
 }
+
+*::selection{
+    background-color: #05182e;
+    color: #fff;
+}
 .black-skin .gradient {
     background: #000;
     background: -webkit-linear-gradient(315deg,#000 0,#616161 100%);

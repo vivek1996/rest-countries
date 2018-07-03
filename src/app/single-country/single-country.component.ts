@@ -3,6 +3,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CountriesService } from '../countries.service';
 import { Location } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-single-country',
   templateUrl: './single-country.component.html',
@@ -16,7 +17,8 @@ export class SingleCountryComponent implements OnInit {
     private router: Router,
     private http: CountriesService,
     private location: Location,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit() {
@@ -26,11 +28,12 @@ export class SingleCountryComponent implements OnInit {
     }, 5000);
     // get country
     this.route.params.subscribe(routeParams => {
-      console.log(routeParams);
+      // console.log(routeParams);
       this.http.getSingleCountry(routeParams.name).subscribe(
         data => {
           this.country = data;
-          console.log(this.country);
+          this.toastr.success(`Loaded Details of ${this.country.name} 😍`);
+          // console.log(this.country);
         },
         error => {
           console.log(error);

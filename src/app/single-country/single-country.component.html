@@ -19,7 +19,7 @@
               <strong>Capital : {{country.capital | titlecase }}</strong>
             </h5>
             <div class="card-text">
-              <p>Native Name : {{country.nativeName}} </p>
+              <p class="red-text">Native Name : {{country.nativeName}} </p>
             </div>
             <div class="row">
               <div class="col-md-6">
@@ -54,13 +54,21 @@
                 </div>
               </div>
             </div>
-            <div *ngIf="country.borders[0]">
+            <div *ngIf="country.timezones">
               <div class="mt-2">
-                <hr> Border Countries :
-                <div class="chip" *ngFor="let count of country.borders">
-                  {{count}}
+                <hr> Timezone :
+                <div class="chip" *ngFor="let zone of country.timezones">
+                  {{zone}}
                 </div>
               </div>
+            </div>
+            <div *ngIf="country.borders[0]">
+
+              <hr> Border Countries :
+              <div class="chip" *ngFor="let count of country.borders">
+                <a [routerLink]="['../../country',count]"> {{count}} </a>
+              </div>
+
             </div>
           </div>
         </div>
