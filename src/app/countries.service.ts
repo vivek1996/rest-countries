@@ -21,7 +21,7 @@ export class CountriesService {
     return this._http.get(
       `${
         this.url
-      }/region/${region}?fields=name;capital;currencies;subregion;timezones;alpha3Code;flag;timezones;nativeName;languages`
+      }/region/${region}?fields=name;capital;currencies;timezones;alpha3Code;flag;timezones;languages`
     );
   }
   // get single country
@@ -30,7 +30,7 @@ export class CountriesService {
     return this._http.get(
       `${
         this.url
-      }/alpha/${country}?fields=name;capital;currencies;subregion;timezones;alpha3Code;population;area;latlng;flag;topLevelDomain;alpha2Code;altSpellings;region;borders;nativeName;languages;callingCodes`
+      }/alpha/${country}?fields=name;capital;currencies;subregion;timezones;alpha3Code;population;area;flag;topLevelDomain;alpha2Code;altSpellings;region;borders;nativeName;languages;callingCodes`
     );
   }
   // get countries by currency

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CountriesService } from '../countries.service';
 import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
+import { CountryInterface } from '../country.interface';
 @Component({
   selector: 'app-single-country',
   templateUrl: './single-country.component.html',
@@ -11,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
   providers: [Location]
 })
 export class SingleCountryComponent implements OnInit {
-  public country;
+  public country: CountryInterface;
   constructor(
     private route: ActivatedRoute,
     private router: Router,

@@ -1,9 +1,10 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CountriesService } from '../countries.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
+import { CountryInterface } from '../country.interface';
 @Component({
   selector: 'app-all-countries',
   templateUrl: './all-countries.component.html',
@@ -12,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AllCountriesComponent implements OnInit {
   public currrentregion;
-  public allCountries;
+  public allCountries: CountryInterface[];
 
   constructor(
     private route: ActivatedRoute,
@@ -27,11 +28,10 @@ export class AllCountriesComponent implements OnInit {
     // console.log(this.currrentregion);
   }
 
-
   ngOnInit() {
     this.spinner.show();
     setTimeout(() => {
-     // console.log('spinner 1');
+      // console.log('spinner 1');
       this.spinner.hide();
     }, 2000);
     // get allcoutries
@@ -39,7 +39,7 @@ export class AllCountriesComponent implements OnInit {
       data => {
         this.allCountries = data;
         setTimeout(() => {
-         // console.log('spinner all country');
+          // console.log('spinner all country');
           this.spinner.hide();
         }, 2000);
         // console.log(this.allCountries);
@@ -71,7 +71,7 @@ export class AllCountriesComponent implements OnInit {
             // console.log(data);
             this.allCountries = data;
             setTimeout(() => {
-            //  console.log('spinner params curr');
+              //  console.log('spinner params curr');
               this.spinner.hide();
             }, 2000);
             this.toastr.success('Loaded Countries By Same Currency 😉');
@@ -84,7 +84,7 @@ export class AllCountriesComponent implements OnInit {
             // console.log(data);
             this.allCountries = data;
             setTimeout(() => {
-             // console.log('spinner param lan');
+              // console.log('spinner param lan');
               this.spinner.hide();
             }, 2000);
             // this.spinner.hide();

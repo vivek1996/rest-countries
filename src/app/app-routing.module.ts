@@ -7,11 +7,10 @@ import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: 'home', component: AllRegionComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'region/:region', component: AllCountriesComponent },
-  // { path: 'all-countries/:code', component: AllCountriesComponent },
   { path: 'country/:name', component: SingleCountryComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: AllRegionComponent }
 ];
 
