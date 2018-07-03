@@ -20,6 +20,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ConvertPipe } from './convert.pipe';
+import { PinkToast } from './pink.toast';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { ConvertPipe } from './convert.pipe';
     AllCountriesComponent,
     SingleCountryComponent,
     AboutComponent,
-    ConvertPipe
+    ConvertPipe,
+    PinkToast
   ],
   imports: [
     BrowserModule,
@@ -36,12 +38,15 @@ import { ConvertPipe } from './convert.pipe';
     NgxSpinnerModule,
     CommonModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      toastComponent: PinkToast
+    }),
     MDBBootstrapModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', {
       enabled: environment.production
     })
   ],
+  entryComponents: [PinkToast],
   providers: [CountriesService],
   schemas: [NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent]
