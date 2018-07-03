@@ -32,7 +32,7 @@
                         <a [routerLink]="['../../region/', country.alpha3Code]" [queryParams]="{ 'language' : language.iso639_1}">{{language.name}} </a>{{i ? "" : ","}} </span>
                     </p>
 
-                    <p>Top level Domain : {{country.topLevelDomain}} </p>
+                    <p *ngIf="country.topLevelDomain">Top level Domain : {{country.topLevelDomain}} </p>
                     <p>Calling Codes : +{{country.callingCodes}}</p>
                   </div>
                 </div>
@@ -40,9 +40,9 @@
               <div class="col-md-6">
                 <div class="card">
                   <div class="black-text">
-                    <p>Alternate Spellings : {{country.altSpellings}} </p>
-                    <p>Area : {{country.area}} Square Kilometers </p>
-                    <p mdbTooltip="{{country.population}}" placement="top">Population : {{country.population | convert }} </p>
+                    <p *ngIf="country.altSpellings[0]">Alternate Spellings : {{country.altSpellings}} </p>
+                    <p *ngIf="country.area">Area : {{country.area}} Square Kilometers </p>
+                    <p *ngIf="country.population" mdbTooltip="{{country.population}}" placement="top">Population : {{country.population | convert }} </p>
                     <ul class="list-group" *ngFor="let currency of country.currencies">
                       <li class="list-unstyled  text-left ml-3 blue-text">Currencies :</li>
                       <li *ngIf="currency.name" class="list-group-item d-flex justify-content-between align-items-center">

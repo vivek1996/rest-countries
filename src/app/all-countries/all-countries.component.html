@@ -55,7 +55,7 @@
                   <span class="badge badge-info badge-pill" *ngIf="currency.symbol">{{currency.symbol}}</span>
                 </li>
               </ul>
-              <p>Languages :
+              <p *ngIf="country.languages">Languages :
                 <span *ngFor="let language of country.languages; let i = last">
                   <a [routerLink]="['/region/', country.alpha3Code]" [queryParams]="{ 'language' : language.iso639_1}">{{language.name}} </a>{{i ? "" : ","}} </span>
               </p>
