@@ -24,16 +24,15 @@ export class AllCountriesComponent implements OnInit {
     private toastr: ToastrService
   ) {
     this.currrentregion = this.route.snapshot.paramMap.get('region');
-
     // console.log(this.currrentregion);
   }
 
   ngOnInit() {
     this.spinner.show();
-    setTimeout(() => {
-      // console.log('spinner 1');
-      this.spinner.hide();
-    }, 2000);
+    // setTimeout(() => {
+    //   // console.log('spinner 1');
+    //   this.spinner.hide();
+    // }, 2000);
     // get allcoutries
     this.http.getAllCountries(this.currrentregion).subscribe(
       data => {
@@ -63,8 +62,8 @@ export class AllCountriesComponent implements OnInit {
     // get query params
     this.route.queryParams.subscribe(queryParams => {
       // console.log(queryParams);
+      this.spinner.show();
       if (queryParams.currency) {
-        this.spinner.show();
         this.http
           .getCountriesByCurrency(queryParams.currency)
           .subscribe(data => {
@@ -77,7 +76,6 @@ export class AllCountriesComponent implements OnInit {
             this.toastr.success('Loaded Countries By Same Currency 😉');
           });
       } else if (queryParams.language) {
-        this.spinner.show();
         this.http
           .getCountriesByLanguage(queryParams.language)
           .subscribe(data => {
