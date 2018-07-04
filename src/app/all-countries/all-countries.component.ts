@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { CountryInterface } from '../country.interface';
-import orderby from 'lodash-es/orderby';
+import { orderBy } from 'lodash-es';
 @Component({
   selector: 'app-all-countries',
   templateUrl: './all-countries.component.html',
@@ -111,17 +111,17 @@ export class AllCountriesComponent implements OnInit {
   public sort(event): void {
     const val = event.target.value;
     if (val === 'languages') {
-      this.temp = orderby(
+      this.temp = orderBy(
         this.allCountries,
         ['languages[0].name', 'languages[1].name'],
         ['asc']
       );
-      console.log(this.temp);
+      // console.log(this.temp);
       this.allCountries = this.temp;
       this.toastr.success(`Sorted Successfully by ${val}`, 'Sorted');
     } else {
-      this.temp = orderby(this.allCountries, [val], ['asc']);
-      console.log(this.temp);
+      this.temp = orderBy(this.allCountries, [val], ['asc']);
+      // console.log(this.temp);
       this.allCountries = this.temp;
       this.toastr.success(`Sorted Successfully by ${val}`, 'Sorted');
     }
