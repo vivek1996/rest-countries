@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { NgxSpinnerService } from 'ngx-spinner';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CountriesService } from '../countries.service';
 import { Location } from '@angular/common';
@@ -18,15 +17,10 @@ export class SingleCountryComponent implements OnInit {
     private router: Router,
     private http: CountriesService,
     private location: Location,
-   // private spinner: NgxSpinnerService,
     private toastr: ToastrService
   ) {}
 
   ngOnInit() {
-    // this.spinner.show();
-    // setTimeout(() => {
-    //   this.spinner.hide();
-    // }, 5000);
     // get country
     this.route.params.subscribe(routeParams => {
       // console.log(routeParams);

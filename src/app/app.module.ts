@@ -10,8 +10,6 @@ import {
 } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
-// loader Import
-// import { NgxSpinnerModule } from 'ngx-spinner';
 import { AllRegionComponent } from './all-region/all-region.component';
 import { AllCountriesComponent } from './all-countries/all-countries.component';
 import { SingleCountryComponent } from './single-country/single-country.component';
@@ -50,7 +48,6 @@ import { NgProgressHttpModule } from '@ngx-progressbar/http';
     }),
     NgProgressHttpModule,
     AppRoutingModule,
-    // NgxSpinnerModule,
     CommonModule,
     FormsModule,
     BrowserAnimationsModule,
