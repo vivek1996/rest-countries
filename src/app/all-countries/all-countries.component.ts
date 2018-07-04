@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { CountryInterface } from '../country.interface';
-import { orderBy } from 'lodash-es';
+import orderby from 'lodash-es/orderby';
 @Component({
   selector: 'app-all-countries',
   templateUrl: './all-countries.component.html',
@@ -28,16 +28,16 @@ export class AllCountriesComponent implements OnInit {
 
   ngOnInit() {
     // get allcoutries
-    this.http.getAllCountries(this.currrentregion).subscribe(
-      data => {
-        this.allCountries = data;
-        this.temp = data;
-        // console.log(this.allCountries);
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    // this.http.getAllCountries(this.currrentregion).subscribe(
+    //   data => {
+    //     this.allCountries = data;
+    //     this.temp = data;
+    //     // console.log(this.allCountries);
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // );
     // this.route.params.subscribe(routeParams => {
     //   console.log(routeParams);
     //   this.http.getAllCountries(routeParams.region).subscribe(
@@ -72,6 +72,16 @@ export class AllCountriesComponent implements OnInit {
             this.toastr.success('Loaded Countries By Same Language 😃');
           });
       } else {
+        this.http.getAllCountries(this.currrentregion).subscribe(
+          data => {
+            this.allCountries = data;
+            this.temp = data;
+            // console.log(this.allCountries);
+          },
+          error => {
+            console.log(error);
+          }
+        );
         console.log('error in params or No Parameter', { queryParams });
       }
     });
@@ -100,17 +110,20 @@ export class AllCountriesComponent implements OnInit {
   }
   public sort(event): void {
     const val = event.target.value;
-    if(val === 'languages'){
-      this.temp = orderBy(this.allCountries, ['languages[0].name','languages[1].name'], ['asc']);
-    console.log(this.temp);
-    this.allCountries = this.temp;
-    this.toastr.success(`Sorted Successfully by ${val}`, 'Sorted');
+    if (val === 'languages') {
+      this.temp = orderby(
+        this.allCountries,
+        ['languages[0].name', 'languages[1].name'],
+        ['asc']
+      );
+      console.log(this.temp);
+      this.allCountries = this.temp;
+      this.toastr.success(`Sorted Successfully by ${val}`, 'Sorted');
     } else {
-      this.temp = orderBy(this.allCountries, [val], ['asc']);
-    console.log(this.temp);
-    this.allCountries = this.temp;
-    this.toastr.success(`Sorted Successfully by ${val}`, 'Sorted');
+      this.temp = orderby(this.allCountries, [val], ['asc']);
+      console.log(this.temp);
+      this.allCountries = this.temp;
+      this.toastr.success(`Sorted Successfully by ${val}`, 'Sorted');
     }
-
   }
 }
