@@ -1,17 +1,26 @@
 <div class="mt-4">
   <div class="container">
     <ng-progress></ng-progress>
-    <div class="row" *ngIf="allCountries">
-      <div class="col-md-4 mt-3 m-auto">
-        <div class="form-inline md-form ml-auto mb-4 mt-3">
+    <div class="row p-2" *ngIf="allCountries">
+      <div class="col-md-5 mt-3">
+        <div class="form-inline md-form mt-3 form-group">
           <!-- <label for="search">Country Name :</label> -->
-          <input #searchBox (keyup)="search(searchBox.value)" class="form-control mr-sm-2 white-text" type="text" placeholder="Enter more than 3 characters"
-            aria-label="Search" id="search">
-          <button class="btn btn-primary btn-rounded btn-sm my-0 waves-light" mdbWavesEffect type="submit" (click)="search(searchBox.value)" >Search</button>
+          <!-- <i class="fa fa-envelope prefix"></i> -->
+          <input mdbInputDirective #searchBox (keyup)="search(searchBox.value)" class="form-control mr-sm-2 white-text w-50 " type="text"
+            placeholder="Enter Country Name" aria-label="Search" id="search">
+          <button class="btn btn-primary btn-rounded btn-sm my-0 waves-light" mdbWavesEffect type="submit" (click)="search(searchBox.value)">Search</button>
         </div>
       </div>
+      <div class="col-md-7  mt-3 mb-2">
+        <span class="white-text">Sort By : </span>
+        <select class="custom-select w-75" (change)="sort($event)">
+          <option selected disabled>Select Option</option>
+          <option value="timezones">Timezones</option>
+          <option value="languages">Languages</option>
+          <option value="subregion">Subregion</option>
+        </select>
+      </div>
     </div>
-
     <div class="row" *ngIf="allCountries">
       <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let country of allCountries">
         <div class="mr-2 mb-2">
@@ -28,7 +37,7 @@
               </h4>
               <h6 class="indigo-text">Capital :{{country.capital}}</h6>
               <div class="card-text">
-                <!-- <p>Native Name : {{country.nativeName}} </p> -->
+                <p>Sub-Region : {{country.subregion}} </p>
                 <p>Timezone : {{country.timezones}} </p>
               </div>
               <p>Currencies :</p>

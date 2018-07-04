@@ -52,7 +52,9 @@ import { NgProgressHttpModule } from '@ngx-progressbar/http';
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      toastComponent: PinkToast
+      toastComponent: PinkToast,
+      preventDuplicates: true,
+      timeOut: 1500
     }),
     MDBBootstrapModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', {

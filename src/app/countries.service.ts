@@ -21,7 +21,7 @@ export class CountriesService {
     return this._http.get(
       `${
         this.url
-      }/region/${region}?fields=name;capital;currencies;timezones;alpha3Code;flag;timezones;languages`
+      }/region/${region}?fields=name;capital;currencies;timezones;alpha3Code;flag;timezones;languages;subregion`
     );
   }
   // get single country
