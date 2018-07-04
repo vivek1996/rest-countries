@@ -3,7 +3,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // Bootstrap import
-import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import {
+  NgModule,
+  NO_ERRORS_SCHEMA,
+  CUSTOM_ELEMENTS_SCHEMA
+} from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 // loader Import
@@ -22,6 +26,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { ConvertPipe } from './convert.pipe';
 import { PinkToast } from './pink.toast';
 import { FormsModule } from '@angular/forms';
+// progressbar import
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,8 +42,15 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgProgressModule.forRoot({
+      spinnerPosition: 'right',
+      color: '#ed1228',
+      thick: true,
+      ease: 'easeInQuad'
+    }),
+    NgProgressHttpModule,
     AppRoutingModule,
-   // NgxSpinnerModule,
+    // NgxSpinnerModule,
     CommonModule,
     FormsModule,
     BrowserAnimationsModule,
