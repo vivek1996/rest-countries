@@ -1,45 +1,18 @@
 <div class="mt-4">
   <div class="container">
     <ng-progress></ng-progress>
-    <div class="row">
+    <div class="row" *ngIf="allCountries">
       <div class="col-md-4 mt-3 m-auto">
         <div class="form-inline md-form ml-auto mb-4 mt-3">
-          <input class="form-control mr-sm-2 white-text" type="text" placeholder="Enter more than 3 characters" aria-label="Search">
-          <button class="btn btn-primary btn-rounded btn-sm my-0 waves-light" mdbWavesEffect type="submit">Search</button>
+          <!-- <label for="search">Country Name :</label> -->
+          <input #searchBox (keyup)="search(searchBox.value)" class="form-control mr-sm-2 white-text" type="text" placeholder="Enter more than 3 characters"
+            aria-label="Search" id="search">
+          <button class="btn btn-primary btn-rounded btn-sm my-0 waves-light" mdbWavesEffect type="submit" (click)="search(searchBox.value)" >Search</button>
         </div>
       </div>
     </div>
 
     <div class="row" *ngIf="allCountries">
-
-      <!-- <div class="col" *ngFor="let country of allCountries">
-        <div class="card">
-          <img class="img-fluid" [src]="country.flag">
-          <div class="card-body">
-            <h4 class="card-title">{{country.name}}</h4>
-            <h5>Capital :{{country.capital}}</h5>
-            <div class="card-text">
-              <p>Native Name : {{country.nativeName}} </p>
-              <p>Timezones: {{country.timezones}} </p>
-              <ul class="list-group" *ngFor="let currency of country.currencies">
-                <li class="list-item">
-                  <a [routerLink]="['/all-countries',country.alpha3Code] " [queryParams]="{currency: currency.code}">currency code: {{currency.code}} </a>
-
-                </li>
-                <li> {{currency.name}} </li>
-                <li> {{currency.symbol}} </li>
-              </ul>
-              <hr>
-              <p>Languages :
-                <span *ngFor="let language of country.languages; let i = last">
-                  <a [routerLink]="['/all-countries/', country.alpha3Code]" [queryParams]="{ 'language' : language.iso639_1}">{{language.name}} </a>{{i ? "" : ","}} </span>
-              </p>
-            </div>
-            <a class="btn btn-primary waves-light" [routerLink]="['/country',country.alpha3Code]" mdbWavesEffect>View More</a>
-          </div>
-
-        </div>
-      </div> -->
       <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let country of allCountries">
         <div class="mr-2 mb-2">
           <div class="card card-cascade narrower hoverable ">

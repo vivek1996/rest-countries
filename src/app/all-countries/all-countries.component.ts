@@ -13,7 +13,7 @@ import { CountryInterface } from '../country.interface';
 export class AllCountriesComponent implements OnInit {
   public currrentregion;
   public allCountries: CountryInterface[];
-
+  public temp;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -30,6 +30,7 @@ export class AllCountriesComponent implements OnInit {
     this.http.getAllCountries(this.currrentregion).subscribe(
       data => {
         this.allCountries = data;
+        this.temp = data;
         // console.log(this.allCountries);
       },
       error => {
@@ -57,6 +58,7 @@ export class AllCountriesComponent implements OnInit {
           .subscribe(data => {
             // console.log(data);
             this.allCountries = data;
+            this.temp = data;
             this.toastr.success('Loaded Countries By Same Currency 😉');
           });
       } else if (queryParams.language) {
@@ -65,6 +67,7 @@ export class AllCountriesComponent implements OnInit {
           .subscribe(data => {
             // console.log(data);
             this.allCountries = data;
+            this.temp = data;
             this.toastr.success('Loaded Countries By Same Language 😃');
           });
       } else {
@@ -74,5 +77,25 @@ export class AllCountriesComponent implements OnInit {
   }
   public goBackToPreviousPage() {
     this.location.back();
+  }
+   search(value: string) {
+   // console.log({value});
+    if (value.length > 4) {
+      this.http.getCountriesByName(value).subscribe(
+        data => {
+          this.allCountries = data;
+              this.toastr.success('Search 🔍 Results 👇', 'List Updated 📃');
+        },
+        error => {
+          console.log(error);
+          console.log(error.error.message);
+          this.toastr.error('Check Spelling', error.error.message);
+        }
+      );
+    } else {
+      this.toastr.warning('Enter More than 4 Characters to search');
+      this.allCountries = this.temp;
+    }
+
   }
 }

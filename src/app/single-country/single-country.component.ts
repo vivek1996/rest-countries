@@ -27,7 +27,7 @@ export class SingleCountryComponent implements OnInit {
       this.http.getSingleCountry(routeParams.name).subscribe(
         data => {
           this.country = data;
-          this.toastr.success(`Loaded Details of ${this.country.name} 😍`);
+          this.toastr.success(`Loaded Details of ${this.country.name} 😎`);
           // console.log(this.country);
         },
         error => {

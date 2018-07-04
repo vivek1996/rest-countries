@@ -49,4 +49,12 @@ export class CountriesService {
       }/lang/${lang}?fields=name;capital;currencies;subregion;timezones;alpha3Code;population;area;latlng;flag;topLevelDomain;alpha2Code;altSpellings;region;borders;nativeName;languages;callingCodes`
     );
   }
+  // get country by name
+  public getCountriesByName(country: string): Observable<any> {
+    return this._http.get(
+      `${
+        this.url
+      }/name/${country}?fields=name;capital;currencies;subregion;timezones;alpha3Code;population;area;flag;topLevelDomain;alpha2Code;altSpellings;region;borders;nativeName;languages;callingCodes`
+    );
+  }
 }
