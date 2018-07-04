@@ -7,7 +7,7 @@ import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/co
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 // loader Import
-import { NgxSpinnerModule } from 'ngx-spinner';
+// import { NgxSpinnerModule } from 'ngx-spinner';
 import { AllRegionComponent } from './all-region/all-region.component';
 import { AllCountriesComponent } from './all-countries/all-countries.component';
 import { SingleCountryComponent } from './single-country/single-country.component';
@@ -36,7 +36,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgxSpinnerModule,
+   // NgxSpinnerModule,
     CommonModule,
     FormsModule,
     BrowserAnimationsModule,

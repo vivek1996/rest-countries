@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxSpinnerService } from 'ngx-spinner';
+// import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-all-region',
   templateUrl: './all-region.component.html',
   styleUrls: ['./all-region.component.scss']
 })
 export class AllRegionComponent implements OnInit {
-  constructor(private spinner: NgxSpinnerService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.spinner.show();
-    setTimeout(() => {
-      this.spinner.hide();
-    }, 1500);
+    // this.spinner.show();
+    // setTimeout(() => {
+    //   this.spinner.hide();
+    // }, 1500);
   }
 }
