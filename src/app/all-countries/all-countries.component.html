@@ -51,9 +51,9 @@
                 <span *ngFor="let language of country.languages; let i = last">
                   <a [routerLink]="['/region/', country.alpha3Code]" [queryParams]="{ 'language' : language.iso639_1}">{{language.name}} </a>{{i ? "" : ","}} </span>
               </p>
-
+              <small class="grey-text">Click on any currency or language to get the filtered list</small>
             </div>
-            <small>Click on any currency or language to get the filtered list</small>
+
             <a class="btn btn-secondary btn-sm  waves-light" [routerLink]="['/country',country.alpha3Code]" mdbWavesEffect>View More</a>
           </div>
         </div>

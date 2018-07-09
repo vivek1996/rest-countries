@@ -39,3 +39,9 @@ and will should the country list which have the same currency (irrespective of t
 > All countries view has the option to search for the country with its name and sort the list with timezone, language, subregion.
 
 > Service Workers are used for offline compatibility 🔥 .
+
+## TODO
+
+- [x] Add Service Worker
+
+For any other features rise an issue .
