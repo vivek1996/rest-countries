@@ -1,27 +1,41 @@
-# RestCountries
+# Countries Info 🎉
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Shows Info of the countries in a specific region and specific country. Using the [Restcountries API](https://restcountries.eu/) .
+
+# Installation :
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
+## [](https://github.com/vivek1996/rest-countries#build)Build 🔧
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Description
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The app has 3 views such as **All region view** , **All countries view** and **Single Country view**.
 
-## Running end-to-end tests
+#### All region view :
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+The All region view is the homepage and it contains the option to select the regions. Clicking this region will navigate to the All countries view with respective region .
 
-## Further help
+#### All countries view :
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The all countries view has list of all countries in the selected region. This view displays countries in format of bootstrap cards with country flags as the image of the card and displays only the important details of that particular country like Name, Capital, timezone,Currency, Subregions etc. On clicking on a particular country, a detailed view of that country is opened.
+
+#### Single country view :
+
+This view uses the flag of the country as cover image and display all the information about the countries in different and well differentiated sections of the page.
+
+## Options :
+
+**Currency Filter** : On clicking on currency name in any of the above view, all
+countries view is opened again but this time with a currency filter applied. I.e
+it will display that currency filter has been applied, show the selected currency
+and will should the country list which have the same currency (irrespective of the region).
+**Language Filter** - On clicking a particular language in any of the above views, All countries view will open again, but this time with a language filter applied. I.e it will display the countries which have the selected language (irrespective of the region).
+
+> All countries view has the option to search for the country with its name and sort the list with timezone, language, subregion.
+
+> Service Workers are used for offline compatibility 🔥 .
