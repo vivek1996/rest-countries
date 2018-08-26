@@ -1,5 +1,12 @@
 # Countries Info 🎉
-
+<p align="center">
+  <a href="https://github.com/vivek1996/rest-countries/issues"><img src="https://img.shields.io/github/issues/vivek1996/rest-countries.svg?style=flat-square" alt="GitHub issues"></a>
+  <a href="https://github.com/vivek1996/rest-countries/network"><img src="https://img.shields.io/github/forks/vivek1996/rest-countries.svg?style=flat-square" alt="GitHub forks"></a>
+    <a href="https://github.com/vivek1996/rest-countries/stargazers"><img src="https://img.shields.io/github/stars/vivek1996/rest-countries.svg?style=flat-square" alt="GitHub stars"></a>
+  <a href="https://david-dm.org/vivek1996/rest-countries"><img src="https://david-dm.org/vivek1996/rest-countries.svg" alt="DEPENDENCIES"></a>
+  <a href="https://snyk.io/test/github/vivek1996/rest-countries"><img src="https://snyk.io/test/github/vivek1996/rest-countries/badge.svg?style=flat-square" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/vivek1996/rest-countries" style="max-width:100%;"></a>
+  <a href="https://github.com/vivek1996/rest-countries"><img src="https://forthebadge.com/images/badges/built-with-love.svg" alt="forthebadge"></a>
+</p>
 Shows Info of the countries in a specific region and specific country. Using the [Restcountries API](https://restcountries.eu/) .
 
 # Installation :
