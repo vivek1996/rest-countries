@@ -1,4 +1,7 @@
 # Countries Info 🎉
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/vivek1996/rest-countries.svg)](https://greenkeeper.io/)
+
 <p align="center">
   <a href="https://github.com/vivek1996/rest-countries/issues"><img src="https://img.shields.io/github/issues/vivek1996/rest-countries.svg?style=flat-square" alt="GitHub issues"></a>
   <a href="https://github.com/vivek1996/rest-countries/network"><img src="https://img.shields.io/github/forks/vivek1996/rest-countries.svg?style=flat-square" alt="GitHub forks"></a>
