@@ -24,7 +24,7 @@
     "@angular/service-worker": "6.0.7",
     "@ngx-progressbar/core": "5.0.1",
     "@ngx-progressbar/http": "5.0.1",
-    "angular-bootstrap-md": "6.1.4",
+    "angular-bootstrap-md": "6.3.0",
     "chart.js": "2.5.0",
     "core-js": "2.5.7",
     "font-awesome": "4.7.0",
