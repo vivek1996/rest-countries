@@ -22,7 +22,7 @@
     "@angular/pwa": "0.6.8",
     "@angular/router": "6.0.7",
     "@angular/service-worker": "6.0.7",
-    "@ngx-progressbar/core": "5.0.1",
+    "@ngx-progressbar/core": "5.3.2",
     "@ngx-progressbar/http": "5.0.1",
     "angular-bootstrap-md": "6.1.4",
     "chart.js": "2.5.0",
