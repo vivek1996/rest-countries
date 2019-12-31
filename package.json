@@ -32,7 +32,7 @@
     "lodash-es": "4.17.15",
     "ngx-spinner": "6.0.0",
     "ngx-toastr": "8.8.0",
-    "rxjs": "6.2.1",
+    "rxjs": "6.5.4",
     "zone.js": "0.8.26"
   },
   "devDependencies": {
